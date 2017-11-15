@@ -1,0 +1,433 @@
+body{
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	overflow-x: hidden;
+	font-family: 'Raleway';
+	letter-spacing: 1px;
+	color: #555!important;
+	-webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+
+}
+body.cow{
+	background: url(../img/bg-cow.jpg);
+	-webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body.dashboard{
+	background-color: #f1f1f1; 
+	font-family: 'Lato';
+}
+body.dashboard h5{
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #aaa;
+	margin-top: 5px;
+	text-shadow: 1px 0 1px #fff;
+}
+img{
+	max-width: 100%;
+	-webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+a, a:hover, a:visited{
+	text-decoration: none!important;
+}
+h1{
+	font-size: 46px!important;
+	font-weight: 300!important
+}
+h6{
+	line-height: 1.3em!important;
+	font-weight: 400!important
+}
+
+.sm-divider{
+	height: 10px;
+}
+.divider{
+	height: 25px;
+}
+.lg-divider{
+	height: 40px;
+}
+#wrapper{
+	max-width: 96%;
+	margin: 0px auto;
+}
+#wrapper-d{
+	width: 90%;
+	margin: 30px auto!important;
+}
+#wrapper-d.no-margin{
+	margin: 0 auto!important;
+}
+#menu-wrapper{
+	width: 80%;
+	margin: 30px auto!important;
+}
+.uppercase{
+	text-transform: uppercase;
+}
+.starter{
+	height: 490px;
+	position: absolute;
+	top: 50%;
+	margin-top: -245px;
+}
+.starter-login{
+	height: 420px;
+	position: absolute;
+	top: 50%;
+	margin-top: -210px;
+}
+.starter .logo{
+	margin-bottom: 20px;
+}
+.btn{
+	letter-spacing: 3px;
+	height: auto!important;
+	width: auto;	
+	border-radius: 5px;
+	font-size: 13px;
+}
+.btn-block{
+	width: 100%!important;
+}
+.btn-lg{
+	font-size: 16px!important;
+}
+.btn-tosca{
+	background-color: #1abc9c;
+	border: 1.4px solid transparent;
+	color: #fff;
+	transition: 0.5s all ease-in-out;
+	-moz-transition: 0.5s all ease-in-out;
+	-webkit-transition: 0.5s all ease-in-out;
+}
+.btn-tosca:hover{
+	background-color: rgba(22, 160, 133,1.0);
+	color: #fff!important;
+	transition: 0.3s all ease-in-out;
+	-moz-transition: 0.3s all ease-in-out;
+	-webkit-transition: 0.3s all ease-in-out;
+}
+
+
+.text-tosca{
+	color: #1abc9c!important;
+}
+.text-white{
+	color: #fff;
+}
+.text-shadow{
+	text-shadow: 1px 0 1px #fff;
+}
+.text-dark{
+	color: #777!important;
+}
+
+.bg-red{
+	background-color: #fd7f73;
+	color: #fff
+}
+.bg-green{
+	background-color: #1bbc9b;
+	color: #fff
+}
+
+.form-login input{
+	width: 100%;
+	border:1px solid #1abc9c!important;
+	color: #1abc9c;
+	padding: 20px 15px;
+	background: #fafafa;
+	text-align:center;
+	text-transform:uppercase;
+	font-size:12px;
+	letter-spacing: 1.5px;
+	transition: 0.3s all ease-in-out;
+	-moz-transition: 0.3s all ease-in-out;
+	-webkit-transition: 0.3s all ease-in-out;
+}
+.form-login input:focus{
+	outline:none;
+	background: #fff;
+	transition: 0.3s all ease-in-out;
+	-moz-transition: 0.3s all ease-in-out;
+	-webkit-transition: 0.3s all ease-in-out;
+}
+.form-login input:first-child{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom:0!important;
+}
+.form-login input[type="password"]{
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/*Admin panel*/
+/*Header*/
+.header{
+	background-color: #fff;
+	color: #1abc9c;
+	padding: 20px 0 15px 0;
+	/*position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;*/
+
+}
+.header .title{
+	font-weight: 600;
+	font-size: 15px;
+}
+.header .img-btn{
+	width: 25px;
+	height: auto;
+}
+.header .img-btn-sm{
+	width: 15px;
+	float: right;
+	height: auto;
+	padding: 5px 0!important;
+	display: block; 
+}
+.header .img-btn.menu{
+	margin-left: -10px;
+}
+.header .row{
+	margin-bottom: 0!important
+}
+
+.side-nav{
+	background-color: #1abc9c!important;
+	color: #fff;
+	/*position: relative;*/
+	text-transform: uppercase;	
+}
+.side-nav .profil{
+	background-color: rgba(0,0,0,.1);
+	padding: 0px 6px!important;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-align: center;
+	color: rgba(0,0,0,.3);
+	font-size: 11.5px;
+	margin: 25px 0; 
+	line-height: 35px;
+	font-weight: bolder
+}
+.side-nav #menu-wrapper{
+	font-weight: bold;
+	color: rgba(255,255,255,.7);
+}
+
+.side-nav li{
+	border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.side-nav li:last-child{
+	border-bottom: 0;
+}
+.side-nav li img{
+	width: 28px!important;
+	margin-right: 15px;
+	margin-bottom: -8px;
+}
+.side-nav .photo{
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border: 5px solid rgba(0,0,0,.1);
+}
+.side-nav .profile-name{
+	margin-top: 15px;
+	margin-bottom: 0!important;
+}
+.side-nav a{
+	padding: 0!important;
+	margin: 0px!important;
+	color: rgba(255,255,255,.7)!important;
+	height: auto!important;
+    line-height: auto!important;
+    display: inline;
+    transition: 0.3s color ease-in-out;
+	-moz-transition: 0.3s color ease-in-out;
+	-webkit-transition: 0.3s color ease-in-out;
+	-o-transition: 0.3s color ease-in-out;
+}
+.side-nav a:hover{
+	background-color: transparent;
+	color: #fff!important;
+	transition: 0.3s color ease-in-out;
+	-moz-transition: 0.3s color ease-in-out;
+	-webkit-transition: 0.3s color ease-in-out;
+	-o-transition: 0.3s color ease-in-out;
+}
+
+
+.side-nav .copy{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	color: rgba(0,0,0,.2);
+}
+
+.tbl-kualitas{
+	font-size: 12px;
+	font-weight: bold;
+	color: #999
+}
+.tbl-detail td{
+	padding-bottom: 0px;
+	color: #777
+}
+
+.chip{
+	border-radius: 5px!important;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 0px 10px!important;
+	margin: 0!important;
+	line-height: 20px!important;
+	height: 20px!important;
+	float: right;
+}
+
+select{
+	display: block!important;
+	background-color: transparent;
+	border-bottom: 1px solid #999!important;
+	color: #1abc9c;
+	border-radius: 0!important;
+}
+select:focus{
+	outline: none;
+	border-bottom-color: #1abc9c!important
+}
+input{
+	border-bottom: 1px solid #ddd!important;
+}
+
+.row{
+	margin-bottom: 10px;
+}
+.row.mini .input-field{
+	margin-top: 0!important;
+	color: #1abc9c
+}
+.bold{
+	font-weight: 700!important
+}
+
+hr{
+	margin-top: 16px;
+	border-top: 0;
+	border-bottom: 1px solid #ddd;
+	border-left: 0;
+}
+
+table.dashboard td{
+	padding: 5px 0!important;
+	vertical-align: top;
+}
+table.dashboard td:last-child{
+	color: #999;
+}
+
+.alert{
+	border-radius: 3px;
+	/*border: 1px solid rgba(46, 204, 113, .5);*/
+	/*background: rgba(46, 204, 113, .1);*/
+	/*color: rgba(46, 204, 113,1.0);*/
+	background: #555;
+	letter-spacing: 0!important;
+	color: #ddd;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	width: 250px;
+	margin-left: -125px;
+}
+
+hr.md{
+	margin: 30px 0;
+}
+.jconfirm{
+	letter-spacing: 0!important;
+}
+.jconfirm .jconfirm-box{
+	width: 80%;
+}
+.jconfirm .btn{
+	letter-spacing: 0!important;
+	font-size: 12px!important;
+}
+.btn-muted{
+	background: #eee;
+	color: #aaa;
+}
+.btn-muted:hover{
+	background: #e0e0e0
+}
+.jconfirm-content{
+	color: #999!important
+}
+
+.dash{
+	font-size: 12.5px;
+	letter-spacing: 0.5px;
+}
+table.dashboard hr{
+	
+}
+
+hr.mid{
+	margin-top: 6px;
+}
+.picker__month-display, .picker__year-display{
+	font-size: 1rem;
+}
+.picker__frame{
+	min-width: 150px!important;
+	width: 90%!important;
+}
+.picker__select--month.browser-default, .picker__select--year.browser-default{
+	display: inline!important;
+}
+textarea{
+	border: 0;
+	border-bottom: 1px solid #ddd!important;
+}
+img.edit{
+	margin-left: 10px;
+	margin-top: -4px;
+	padding-right: 10px!important;
+}
+
+/*Override*/
+.row.mini input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+	height: 2rem;
+}
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+	margin: 0;
+}
+
+.modal{
+	letter-spacing: 0;
+}

@@ -1,0 +1,489 @@
+
+
+.alert {
+    position: relative;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+}
+
+.closebtn {
+    position: relative;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    position: relative;
+    color: black;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    left: 250px;
+    top: 0px;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 60%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #808080 ;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    height: 50px;
+    background-color: #808080;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+body {
+background: url(image/background.jpg) no-repeat;
+background-size: 100% 100%;
+background-attachment:fixed;
+margin: 0px;
+}
+
+#background{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#background1{
+    position: fixed;
+    
+}
+
+
+
+.profil{
+	text-align: center;
+}
+
+.img-profil1{
+	width: 30%;
+}
+
+.tombol-logout{
+	width: 50%;
+	position: center;
+	font-size: 16px;
+	border-color: #74e585;
+	background-color: transparent;
+	border-radius: 40%;
+}
+
+#atas-home{
+	position: relative;
+	top: 3vh;
+}
+
+
+.ilogo{
+	float: right;
+	width: 30%;
+}
+
+
+.tulisan{
+	float: right;
+	width: 65%;
+}
+
+.judul{
+	font-family: "Times New Roman", Georgia, Serif;;;
+	font-size: 60px;
+	margin-left: 10px;
+	margin-bottom: 4vh;
+	margin-top: 5vh;
+}
+
+
+
+
+
+.judulawal{
+    
+    font-family: "Times New Roman", Georgia, Serif;;
+    font-size: 70px;
+    margin-left: -115px;
+    margin-bottom: 4vh;
+    margin-top: 5vh;
+
+}
+
+.subjudul{
+	font-family: "Times New Roman", Georgia, Serif;;;
+	font-size: 24px; 
+	margin-left: 10px;
+}
+
+
+.subjudulawal{
+       
+    font-family: Garamond, serif;;
+    font-size: 24px; 
+    margin-left: 18px;
+    color: #B4391E; 
+}
+.subjudulawall{
+    font-family: Garamond, serif;;
+    font-size: 24px; 
+    margin-left: -5px;
+}
+
+
+
+.subheader{
+	margin-top: 5vh;
+	font-family: "Times New Roman", Georgia, Serif;;
+	font-size: 16px; 
+	width: 100%;
+	text-align: center;	
+	margin-bottom: 35px;
+}
+
+.pu{
+	color: #696969;
+    size: 20px;
+}
+
+.ku{
+	color: #696969;
+}
+.lu{
+    color: red;
+    font-size: 40px;
+}
+.puu{
+    color: red;
+    size: 20px;
+}
+
+
+.kupu{
+    color: red;
+}
+
+.ku2{
+	color: #BDB76B;
+}
+
+.ilogo1{
+	text-align: center;
+}
+
+.ilogo2{
+	width: 50%;
+}
+
+.tlogo2{
+}
+
+
+.rb{
+	font-family: 'Roboto';
+	font-size: 20px;
+}
+
+.ilogo3{
+	width: 20%;
+}
+
+.ilogo4{
+	float: left;
+	margin-right: 25px;
+	width: 70%;
+}
+
+.tulisan3{
+	margin-top: 5vh;
+	font-family: Georgia, serif;
+	font-size: 50px;
+}
+.tulisan4{
+	margin-top: 5vh;
+	font-family: Georgia, serif;
+	font-size: 50px;
+}
+#menu-kondisi{
+	padding-top: 90px;
+}
+
+#menu-kondisi1{
+    padding-top: 90px;
+    margin-left: 100px
+}
+
+.tx-input{
+	font-family: bebas neue;
+	font-size: 25px;
+	margin-bottom: 30px;
+}
+
+.tx-input1{
+    font-family: bebas neue;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.tx-hasil{
+	font-family: bebas neue;
+	font-size: 40px;
+}
+
+.fkondisi{
+	margin-bottom: 30px;
+    margin-left: -280px;
+    margin-top: -8px;
+}
+
+.menu{
+	margin-top: 8vh;
+}
+.menuuser{
+    margin-top: 8vh;
+    margin-left: 230px
+}
+
+.menuawal{
+    margin-left: 35px;
+    margin-top: 45vh;
+}
+
+.menu111{
+    width: 25%;
+    float: right;
+    margin-right: 30px;
+}
+.menu222{
+    width: 25%;
+    margin-left: 10px;
+}
+
+
+.menuawal1{
+    margin-top: 20vh;
+}
+
+
+.menu1{
+	width: 55%;
+	float: right;
+	margin-right: 30px;
+}
+.menu2{
+	width: 55%;
+	margin-left: 10px;
+}
+.menu3{
+    width: 55%;
+    margin-left: -110px;
+}
+.menu11{
+    width: 30%;
+    float: right;
+    margin-right: 30px;
+}
+.menu22{
+    width: 30%;
+    margin-left: 30px;
+}
+.tmenu{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.tmenu1{
+	text-align: center;
+	font-size: 16px;
+	font-family: roboto;
+    margin-left: -21px;
+}
+
+.tmenu2{
+	text-align: center;
+    margin-left: -50px;
+}
+
+.tmenu3{
+}
+
+.tmenu4{
+	text-align: center;
+}
+
+
+.next{
+	position: center;
+	text-align: center;
+}
+
+.next1{
+    position: center;
+    text-align: center;
+    margin-left: -70px;
+}
+
+.trekap{
+	margin-top: 5vh;
+	font-family: bebas neue;
+	font-size: 40px;
+}
+
+tr:nth-of-type(odd) {
+background-color:  #f6f1c3  ;
+}
+/*footer*/
+
+footer{
+    height: 40px;
+    background:#f0f0f0;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    color:#808080;
+    left: 0;
+}
+
+.versi{
+    margin-left: 30px;
+    margin-top: 10px;
+    float: left;
+    display: inline-block;
+}
+
+.team{
+    margin-top: 10px;
+    margin-left: -25px;
+    text-align: center;
+    display: inline-block;
+}
+
+.for{
+    margin-right: 30px;
+    margin-top: 10px;
+    float: right;
+}
+
+/*Sign in*/
+.isi{
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    margin-top: 1vh;
+    margin-left: 10px;
+}
+
+.form-login{
+   
+    width:600px;
+    margin: 100px auto;
+    background-opacity: 0.5;
+}
+
+.login{
+    padding: 20px;
+}
+
+.login-item{
+    margin-bottom: 15px;
+}
+
+.gg{
+    margin: 15px auto;
+}
+
+.judulform{
+	font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+.judullogin{
+    margin-right: 50 ; 
+    color:  #5F1606;
+    font-family: bebas neue, cursive;
+    font-size: 40px;
+}
+
+.forgot{
+    color: #ffffff;
+    text-align: center;
+}
+@media screen and (max-width:478px) {
+	.ilogo{
+		float: left;
+	}
+
+
+}
