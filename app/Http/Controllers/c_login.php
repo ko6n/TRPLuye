@@ -13,11 +13,11 @@ class c_login extends Controller
     {
         $tingkatan = m_tingkatan::where('username',$request->username)->first(); 
         if (count($tingkatan)==0) {
-            $request->session()->put('alertUsername','Username dan Password Tidak Sesuai');
+            $request->session()->put('alertUsername','Username dan Password Kosong / Tidak Sesuai');
             return view('masuk');
         } else {
-            if ($request->password != $tingkatan->password) {
-                $request->session()->put('alertPassword','Masukkan Password Anda');
+            if ($request->password != $tingkatan->password ) {
+                $request->session()->put('alertPassword','Password Anda Tidak Sesuai');
                 return view('masuk');
             } else {
                 $request->session()->forget('alertUsername');
