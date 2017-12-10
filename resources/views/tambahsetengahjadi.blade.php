@@ -55,17 +55,17 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="lihatsetengahjadi" class="active-menu waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
                     <li>
                         <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
                     </li>
                     
                     
-                    
+             
 
                     
 
@@ -74,14 +74,14 @@
         </nav>
         <!-- /. NAV SIDE  -->
       
-        <div id="page-wrapper">
+         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Barang Setengah Jadi
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Tambah Setengah Jadi</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -94,62 +94,72 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Tambah Barang Setengah Jadi
                         </div>
                         <div class="card-content">
-                            <div class="table-responsive">
+                            <div class="wow fadeIn" id="wrapper-d">
 
-
-                                
-                                
-
-                                    
-
-                                   
-                            </div>
-                            
-                        </div>
-                    </div>
-                  
-                </div>
+        @if(Session::has('message'))
+        <div class="col s12">
+            <div class="alert1">
+                {{ Session::get('message') }}
             </div>
+        </div>
+        @endif
+
+
+
+    <form class="col s12" action="{{ url('tambahsetengahjadi') }}">
+     {{ csrf_field() }}   
+     
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="namabarang" type="text" name="namabarang" required="">
+          <label for="first_name">Nama Barang </label>
+        </div>
+        <div class="input-field col s8">
+          <input id="jumlahbarang" type="number" name="jumlah" required="">
+          <label for="last_name">Jumlah</label>
+        </div>
+      </div>
+       
       
+      <button class="waves-effect waves-light btn" style="width: 100px;">Tambah</button>
+      
+       </form>
+
+       
+    <div class="clearBoth"></div>
+  </div>
     </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+ </div> 
+    </div>
+
+<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/jquery.metisMenu.js"></script>
+<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+<script src="assets/js/morris/morris.js"></script>
+<script src="assets/js/easypiechart.js"></script>
+<script src="assets/js/easypiechart-data.js"></script>
+<script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="{{ URL::asset('assets/js/jquery-1.12.4.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/wow.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/materialize.min.js') }}" type="text/javascript"></script> 
+<script>
     
-    <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    
-    <script src="assets/materialize/js/materialize.min.js"></script>
-    
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
-    
-    
-    <script src="assets/js/easypiechart.js"></script>
-    <script src="assets/js/easypiechart-data.js"></script>
-    
-     <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
 
 
-     <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
+      new WOW().init();
+         $('.alert1').delay(3000).fadeOut(500)
 
-    
-    <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script> 
- 
+</script>
+
+<!-- Custom Js -->
+<script src="assets/js/custom-scripts.js"></script> 
 
 </body>
 

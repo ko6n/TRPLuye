@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Perakitan</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,15 +55,17 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="/perakitan"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="viewpemesananperakitan" class="waves-effect waves-dark"><i class="fa fa-shopping-cart"></i> Pemesanan</a>
                     </li>
                     <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewsetengahjadiPerakitan" class="active-menu waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
-                    
+                    <li>
+                        <a href="viewfilePerakitan" class="waves-effect waves-dark"><i class="fa fa-edit"></i>Desain Perancangan</a>
+                    </li>
                     
                     
 
@@ -74,14 +76,14 @@
         </nav>
         <!-- /. NAV SIDE  -->
       
-        <div id="page-wrapper">
+       <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Stok Barang Setengah Jadi
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Setengah Jadi</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -94,20 +96,63 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             {{ date('d M Y') }}
                         </div>
                         <div class="card-content">
                             <div class="table-responsive">
 
 
-                                
-                                
+                                <div class="col-md-7">
+                                <table style="border: 0;text-align: center;">
+
+                                    <thead style="border: 0;">
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Barang</th>
+                                            <th>Sisa Barang</th>
+                                           
+                                        </tr>
+
+                                    </thead>
 
                                     
 
-                                   
+                                    <tbody  >
+
+                                <?php $no=1; ?>
+                                @foreach($setengahjadis as $setengahjadi)
+                                        
+                                    
+                                        <tr>
+                                            <td><br></td>
+                                            <td><br></td>
+                                            <td><br></td>
+                                           
+                                        </tr>
+                                        
+
+
+                                        <tr>
+                                            <th>{{$no++}}</th>
+                                            <td>{{ $setengahjadi->namabarang }}</td>
+                                            <td>{{ $setengahjadi->jumlah }} unit</td>
+                                            <td>
+                                           
+                                        </tr>
+                                         
+                               @endforeach
+                               
+                                    </tbody>
+                                    
+                                </table>
+                               
                             </div>
-                            
+
+                            <div class="row">
+                            <div class="col-md-12"><br><br><br>
+                            </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                   

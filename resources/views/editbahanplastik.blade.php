@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Gudang</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,13 +55,16 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="/gudang"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="formbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tambah Bahan Baku</a>
                     </li>
                     <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewbahanbakuGudang" class=" active-menu waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                    </li>
+                    <li>
+                        <a href="viewsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
                     
                     
@@ -77,16 +80,15 @@
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Bahan Baku
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Bahan Baku</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
         </div>
-
             <div id="page-inner"> 
                
             <div class="row">
@@ -94,26 +96,41 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Ambil Bahan Baku
                         </div>
                         <div class="card-content">
-                            <div class="table-responsive">
+                            <div class="wow fadeIn" id="wrapper-d">
 
-
-                                
-                                
-
-                                    
-
-                                   
-                            </div>
-                            
-                        </div>
-                    </div>
-                  
-                </div>
+        @if(Session::has('message'))
+        <div class="col s12">
+            <div class="alert">
+                {{ Session::get('message') }}
             </div>
+        </div>
+        @endif
+
+
+    <form class="col s12" action="{{ url('ubahplastik') }}&{{ $plastik->id_plastik }}">
+
+     {{ csrf_field() }}   
+     
+      <div class="row">
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan1" type="number" name="jumlah" value="{{ $plastik->jumlah }}" required="">
+          <label for="last_name">Jumlah plastik</label>
+        </div>
+      </div>
+       
       
+      <button class="waves-effect waves-light btn" style="width: 100px;">Simpan</button>
+      
+       </form>
+
+       
+    <div class="clearBoth"></div>
+  </div>
+    </div>
+ </div> 
     </div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->

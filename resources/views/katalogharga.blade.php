@@ -59,7 +59,7 @@
                     <a href="formkatalogharga" class=" active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Katalog Harga</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                    <a href="viewbahanbakuAdmin" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
                 </li>
 
 
@@ -121,7 +121,7 @@
        
       
       <button class="waves-effect waves-light btn" style="width: 100px;">Tambah</button>
-      <a class="waves-effect waves-light btn" href="{{ url('lihatpemesanan') }}" style="width: 100px;">Lihat</a> 
+      <a class="waves-effect waves-light btn" href="{{ url('lihatkatalogharga') }}" style="width: 100px;">Lihat</a> 
        </form>
 
        

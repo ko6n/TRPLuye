@@ -14,6 +14,9 @@
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    
+    
+  
 </head>
 
 <body>
@@ -59,7 +62,7 @@
                     <a href="formkatalogharga" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Katalog Harga</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                    <a href="viewbahanbakuAdmin" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
                 </li>
 
 
@@ -98,7 +101,7 @@
 
         @if(Session::has('message'))
         <div class="col s12">
-            <div class="alert">
+            <div class="alert1">
                 {{ Session::get('message') }}
             </div>
         </div>
@@ -118,17 +121,31 @@
           <div class="input-field col s8">
             <input id="tanggal" type="date" class="datepicker" name="tanggalpesan" required="">
           </div>
+          <div class="input-field col s8">
+          <label for="last_name">Tanggal Jadi</label><br>
+        </div>
+          <div class="input-field col s8">
+            <input id="estimasi" type="date" class="datepicker" name="estimasi" required="">
+          </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input id="alamat" type="text" name="alamat" required="">
           <label for="first_name">Alamat Pemesan</label>
         </div>
-        <div class="input-field col s6">
-          <input id="jenis_barang" type="text" name="jenis_barang" required="">
-          <label for="last_name">Jenis Mesin</label>
+       <!--  <div class="row">
+          <div class="input-field col s6">
+            <label for="warna">Warna</label>
+          </div>
+ -->         <div class="input-field col s6" style="margin-top: 19px;">
+            <select id="jenis_barang" name="jenis_barang" class="required" required="">
+              <option value="">- Pilih jenis Mesin -</option>
+              <option value="Vertikal">Vertikal</option>
+              <option value="Horizontal">Horizontal</option>
+              
+            </select>
+          </div>
         </div>
-      </div>
        <div class="row">
         <div class="input-field col s6">
           <input id="telepon" type="text" name="no_telepon" required="">
@@ -146,10 +163,16 @@
           <label for="first_name">Kegunaan Mesin</label>
         </div>
         <div class="input-field col s6">
-          <input id="harga" type="text" name="harga" required="">
+          <input id="harga" type="number" name="harga" required="">
           <label for="last_name">Harga Total</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="keterangan" type="text" name="keterangan" required="">
+          <label for="first_name">Keterangan Mesin</label>
+        </div>
+        </div>
       <div class="row">
         <div class="input-field col s6"><br>
           <input  id="status" type="text" name="status_jadi" value="belum jadi" readonly="">
@@ -171,6 +194,67 @@
     </div>
  </div> 
 
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <div class="card-action">
+                             Katalog Harga /unit
+                        </div>
+                        <div class="card-content">
+                            <div class="table-responsive">
+
+
+                                
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Barang / Custom</th>
+                                            <th>Harga /unit</th>
+                                            <th>Diperbarui</th>
+                                           
+                                        </tr>
+                                    </thead>
+
+                                    
+
+                                    <tbody style="text-align: center;" >
+
+                                <?php $no=1; ?>
+                                @foreach($kataloghargas as $katalogharga)
+                                        
+                                        <tr>
+                                            <th>{{$no++}}</th>
+                                            <td>{{ $katalogharga->namabarang }}</td>
+                                            <td>{{ $katalogharga->harga }}</td>
+                                            <td>{{ date('d M Y', strtotime($katalogharga->created_at)) }}</td>
+                                            <td>
+                                            <form method="POST" action="hapuskatalog{{$katalogharga->id_katalog}}" accept-charset="UTF-8">
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                             <input onclick="return confirm('Anda yakin akan menghapus data ini ?');" type="submit" class="waves-effect waves-light btn" tabindex="0" value="Hapus" style="width: 80px;"
+                                            /> 
+                                            </form>
+                                            </td>
+                                            
+                                            
+                                        </tr>
+                                         
+                               @endforeach
+                               
+                                    </tbody>
+                                    
+                                </table>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
 
      </div>     
 
@@ -179,31 +263,21 @@
 <!-- JS Scripts-->
 <!-- jQuery Js -->
 <script src="assets/js/jquery-1.10.2.js"></script>
-
-<!-- Bootstrap Js -->
 <script src="assets/js/bootstrap.min.js"></script>
 
-<script src="assets/materialize/js/materialize.min.js"></script>
-
-<!-- Metis Menu Js -->
 <script src="assets/js/jquery.metisMenu.js"></script>
-<!-- Morris Chart Js -->
 <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
 <script src="assets/js/morris/morris.js"></script>
-
-
 <script src="assets/js/easypiechart.js"></script>
 <script src="assets/js/easypiechart-data.js"></script>
-
 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-
-
 <script src="assets/js/dataTables/jquery.dataTables.js"></script>
 <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="{{ URL::asset('assets/js/jquery-1.12.4.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/wow.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/materialize.min.js') }}" type="text/javascript"></script> 
 <script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
+   
 
 
 $('.datepicker').pickadate({
@@ -212,6 +286,7 @@ $('.datepicker').pickadate({
     });
 
       new WOW().init();
+         $('.alert1').delay(3000).fadeOut(500)
 
 </script>
 

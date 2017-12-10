@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Perakitan</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,15 +55,17 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="/perakitan"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="viewpemesananperakitan" class="  waves-effect waves-dark"><i class="fa fa-shopping-cart"></i> Pemesanan</a>
+                    </li>
+                     <li>
+                        <a href="viewsetengahjadiPerakitan" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
                     <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewfilePerakitan" class="active-menu waves-effect waves-dark"><i class="fa fa-edit"></i>Desain Perancangan</a>
                     </li>
-                    
                     
                     
 
@@ -74,14 +76,14 @@
         </nav>
         <!-- /. NAV SIDE  -->
       
-        <div id="page-wrapper">
+       <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Desain Perancangan
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Desain Perancangan</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -94,18 +96,51 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Download File Desain
                         </div>
                         <div class="card-content">
                             <div class="table-responsive">
 
 
                                 
-                                
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+
+                                    <thead>
+                                        <tr >
+                                            <th style="text-align: center;">No</th>
+                                            <th style="text-align: center;">Nama Desain</th>
+                                            <th style="text-align: center;">Tanggal Upload</th>
+                                            <th style="text-align: center;">Aksi</th>
+                                            
+                                           
+                                        </tr>
+                                    </thead>
 
                                     
 
-                                   
+                                    <tbody  >
+
+                                <?php $no=1; ?>
+                                @foreach($uploads as $upload)
+                                        
+                                        <tr>
+                                            <th style="text-align: center;">{{$no++}}</th>
+                                            <td style="text-align: center;">{{ $upload->namaperancangan }}</td>
+                                            <td style="text-align: center;">{{ $upload->created_at }}</td>
+                                            <td style="text-align: center;">
+
+                                                <a class="waves-effect waves-light btn" href="up_file/{{ $upload->file_name }}" download="{{ $upload->file_name }}" style="width: 150px" >Download</a> 
+                                            </td>
+
+                                            
+                                        </tr>
+                                         
+                               @endforeach
+                               
+                                    </tbody>
+                                    
+                                </table>
+                               
                             </div>
                             
                         </div>

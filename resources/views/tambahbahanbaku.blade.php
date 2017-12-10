@@ -55,10 +55,10 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="/gudang"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="/gudang"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="formbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tambah Bahan Baku</a>
+                        <a href="formbahanbaku" class="active-menu waves-effect waves-dark"><i class="fa fa-qrcode"></i>Tambah Bahan Baku</a>
                     </li>
                     <li>
                         <a href="viewbahanbakuGudang" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
@@ -80,11 +80,11 @@
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Bahan Baku
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Tambah Bahan Baku</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -96,50 +96,105 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Tambah Bahan Baku
                         </div>
-                        </div>
-                    <!--End Advanced Tables -->
-                </div>
+                        <div class="card-content">
+                            <div class="wow fadeIn" id="wrapper-d">
+
+        @if(Session::has('message'))
+        <div class="col s12">
+            <div class="alert1">
+                {{ Session::get('message') }}
             </div>
-        <!-- /. PAGE WRAPPER  -->
+        </div>
+        @endif
+
+
+    <form class="col s12" action="{{ url('tambahbahan') }}">
+     {{ csrf_field() }}
+
+      <div class="row">
+        <div class="input-field col s8"><br><br>
+          <select name="namabahan">
+            <option value="besi">Besi</option>
+            <option value="almunium">almunium</option>
+            <option value="seng">seng</option>
+            <option value="plastik">plastik</option>
+            <option value="kacamika">kacamika</option>
+            <option value="tembaga">tembaga</option>
+          </select>
+          <label for="first_name">Jenis Bahan Baku </label>
+        </div>
+
+        <div class="input-field col s8"><br><br>
+          <select name="bulan">
+            <option value="1">Januari</option>
+            <option value="2">Februari</option>
+            <option value="3">maret</option>
+            <option value="4">april</option>
+            <option value="5">mei</option>
+            <option value="6">juni</option>
+            <option value="7">juli</option>
+            <option value="8">agustus</option>
+            <option value="9">september</option>
+            <option value="10">oktober</option>
+            <option value="11">november</option>
+            <option value="12">desember</option>
+          </select>
+          <label for="first_name">Bulan </label><br>
+        </div>
+
+        <div class="input-field col s8">
+          <input id="jumlahbahan" type="text" name="jumlah" required="">
+          <br><label for="last_name">Jumlah</label>
+        </div>
+      </div>
+
+
+      <button class="waves-effect waves-light btn" style="width: 100px;">Tambah</button>
+
+       <a href="lihatbahanbaku" class="waves-effect waves-light btn" style="width: 100px;">Lihat</a>
+       </form>
+
+       
+    <div class="clearBoth"></div>
+  </div>
     </div>
+ </div> 
     </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    
-    <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    
-    <script src="assets/materialize/js/materialize.min.js"></script>
-    
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
-    
-    
-    <script src="assets/js/easypiechart.js"></script>
-    <script src="assets/js/easypiechart-data.js"></script>
-    
-     <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
+<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
 
-     <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
-
+<script src="assets/js/jquery.metisMenu.js"></script>
+<!-- <script src="assets/materialize/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    </script> -->
+<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+<script src="assets/js/morris/morris.js"></script>
+<script src="assets/js/easypiechart.js"></script>
+<script src="assets/js/easypiechart-data.js"></script>
+<script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="{{ URL::asset('assets/js/jquery-1.12.4.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/wow.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/materialize.min.js') }}" type="text/javascript"></script> 
+<script>
     
-    <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script> 
- 
+
+
+      new WOW().init();
+         $('.alert1').delay(3000).fadeOut(500)
+
+</script>
+
+<!-- Custom Js -->
+<script src="assets/js/custom-scripts.js"></script> 
 
 </body>
 

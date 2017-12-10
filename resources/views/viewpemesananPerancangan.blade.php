@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Perancangan</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,13 +55,13 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="perancangan"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="viewpemesanan" class="active-menu waves-effect waves-dark"><i class="fa fa-shopping-cart"></i> Pemesanan</a>
                     </li>
                     <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="uploaddesain" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Desain Perancangan</a>
                     </li>
                     
                     
@@ -74,38 +74,83 @@
         </nav>
         <!-- /. NAV SIDE  -->
       
-        <div id="page-wrapper">
+
+<div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Pemesanan
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Pemesanan</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
         </div>
 
-            <div id="page-inner"> 
+       <div id="page-inner"> 
                
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Tabel Pemesanan
                         </div>
                         <div class="card-content">
                             <div class="table-responsive">
 
 
                                 
-                                
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal Pesanan</th>
+                                            <th>Nama Pemesan</th>
+                                           
+                                            <th>Jenis Barang</th>
+                                            <th>Kegunaan</th>
+                                            <th>Jumlah</th>
+                                           
+                                            <th>Status</th>
+                                            <th>Desain</th>
+                                            
+                                            <th></th>
+                                        </tr>
+                                    </thead>
 
                                     
 
-                                   
+                                    <tbody style="text-align: center;" >
+
+                                <?php $no=1; ?>
+                                @foreach($pemesanans as $pemesanan)
+                                        
+                                        <tr>
+                                            <th>{{$no++}}</th>
+                                            <td>{{ $pemesanan->tanggalpesan }}</td>
+                                            <td>{{ $pemesanan->nama_pemesan }}</td>
+                                            
+                                            <td>{{ $pemesanan->jenis_barang }}</td>
+                                            <td>{{ $pemesanan->kegunaanmesin }}</td>
+                                            <td>{{ $pemesanan->jumlah }}</td>
+                                            
+                                            <td>{{ $pemesanan->status_jadi }}</td>
+                                            <td>{{ $pemesanan->desain }}</td>
+                
+                                            <td>
+                                                <a class="waves-effect waves-light btn" href="detailpemesananPerancangan{{ $pemesanan->id_pemesanan }}" style="width: 80px;">Edit</a> 
+                                            </td>
+                                        </tr>
+                                         
+                               @endforeach
+                               
+                                    </tbody>
+                                    
+                                </table>
+                               
                             </div>
                             
                         </div>
@@ -115,6 +160,8 @@
             </div>
       
     </div>
+
+
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->

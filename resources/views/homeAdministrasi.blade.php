@@ -63,7 +63,7 @@
                         <a href="formkatalogharga" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Katalog Harga</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewbahanbakuAdmin" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
                     </li>
                     
                     
@@ -102,14 +102,11 @@
 
 
                                 
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                
 
                                     
 
-                                    </tbody>
-                                    
-                                </table>
-                               
+                                   
                             </div>
                             
                         </div>

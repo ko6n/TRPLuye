@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Manager</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,13 +55,10 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="/manager"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
-                    </li>
-                    <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewpemesananManager" class="active-menu waves-effect waves-dark"><i class="fa fa-shopping-cart"></i> Pemesanan</a>
                     </li>
                     
                     
@@ -77,11 +74,11 @@
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Pemesanan
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Tabel</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -94,18 +91,59 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Laporan Pemesanan
                         </div>
                         <div class="card-content">
                             <div class="table-responsive">
 
 
                                 
-                                
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal Pesanan</th>
+                                            <th>Nama Pemesan</th>
+                                            <th>Alamat</th>
+                                            <th>No Telepon</th>
+                                            <th>Jenis Barang</th>
+                                            
+                                            <th>Keterangan</th>
+                                            <th>Jumlah</th>
+                                            <th>Harga</th>
+                                           
+                                            
+                                        </tr>
+                                    </thead>
 
                                     
 
-                                   
+                                    <tbody style="text-align: center;" >
+
+                                <?php $no=1; ?>
+                                @foreach($pemesanans as $pemesanan)
+                                        
+                                        <tr>
+                                            <th>{{$no++}}</th>
+                                            <td>{{ $pemesanan->tanggalpesan }}</td>
+                                            <td>{{ $pemesanan->nama_pemesan }}</td>
+                                            <td>{{ $pemesanan->alamat }}</td>
+                                            <td>{{ $pemesanan->no_telepon }}</td>
+                                            <td>{{ $pemesanan->jenis_barang }}</td>
+                                          
+                                            <td>{{ $pemesanan->keterangan }}</td>
+                                            <td>{{ $pemesanan->jumlah }}</td>
+                                            <td>{{ $pemesanan->harga }}</td>
+                                            
+                                        </tr>
+                                         
+                               @endforeach
+                               
+                                    </tbody>
+                                    
+                                </table>
+                               
                             </div>
                             
                         </div>

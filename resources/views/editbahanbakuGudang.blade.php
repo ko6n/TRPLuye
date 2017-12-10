@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right" > 
                 
                   
-                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Produksi</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
+                  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1" ><i class="fa fa-user fa-fw" style="margin-left: 20px;"></i> <b>Gudang</b> <i class="materiall-icons right" style="margin-left: 30px;"></i></a></li>
             </ul>
         </nav>
         <!-- Dropdown Structure -->
@@ -55,13 +55,16 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu waves-effect waves-dark" href="/gudang"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="formbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tambah Bahan Baku</a>
                     </li>
                     <li>
-                        <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                        <a href="viewbahanbakuGudang" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                    </li>
+                    <li>
+                        <a href="viewsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
                     
                     
@@ -86,7 +89,6 @@
                     </ol> 
                                     
         </div>
-
             <div id="page-inner"> 
                
             <div class="row">
@@ -94,26 +96,61 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Tambah Bahan Baku
                         </div>
                         <div class="card-content">
-                            <div class="table-responsive">
+                            <div class="wow fadeIn" id="wrapper-d">
 
-
-                                
-                                
-
-                                    
-
-                                   
-                            </div>
-                            
-                        </div>
-                    </div>
-                  
-                </div>
+        @if(Session::has('message'))
+        <div class="col s12">
+            <div class="alert">
+                {{ Session::get('message') }}
             </div>
+        </div>
+        @endif
+
+
+    <form class="col s12" action="{{ url('ubahbahanbakuGudang') }}&{{ $besi->id_besi }}{{ $almunium->id_almunium }}{{ $tembaga->id_tembaga }}{{ $kacamika->id_kacamika }}{{ $plastik->id_plastik }}{{ $seng->id_seng }}">
+
+     {{ csrf_field() }}   
+     
+      <div class="row">
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan1" type="number" name="jumlah" value="{{ $besi->jumlah }}" required="">
+          <label for="last_name">Jumlah Besi</label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan2" type="number" name="jumlah" value="{{ $almunium->jumlah }}" required="">
+          <label for="last_name">Jumlah Almunium</label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan3" type="number" name="jumlah" value="{{ $tembaga->jumlah }}" required="">
+          <label for="last_name">Jumlah Tembaga</label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan4" type="number" name="jumlah" value="{{ $kacamika->jumlah }}" required="">
+          <label for="last_name">Jumlah Kacamika</label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan5" type="number" name="jumlah" value="{{ $plastik->jumlah }}" required="">
+          <label for="last_name">Jumlah Plastik</label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbahan6" type="number" name="jumlah" value="{{ $seng->jumlah }}" required="">
+          <label for="last_name">Jumlah Seng</label>
+        </div>
+      </div>
+       
       
+      <button class="waves-effect waves-light btn" style="width: 100px;">Simpan</button>
+      
+       </form>
+
+       
+    <div class="clearBoth"></div>
+  </div>
+    </div>
+ </div> 
     </div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->

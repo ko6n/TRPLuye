@@ -55,10 +55,10 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class=" waves-effect waves-dark" href="produksi"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="lihatsetengahjadi" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
+                        <a href="lihatsetengahjadi" class="active-menu waves-effect waves-dark"><i class="fa fa-sitemap"></i> Barang Setengah Jadi</a>
                     </li>
                     <li>
                         <a href="viewbahanbaku" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
@@ -74,14 +74,14 @@
         </nav>
         <!-- /. NAV SIDE  -->
       
-        <div id="page-wrapper">
+       <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard
+                            Barang Setengah Jadi
                         </h1>
                         <ol class="breadcrumb">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">Detail Setengah Jadi</a></li>
                       <li class="active">Data</li>
                     </ol> 
                                     
@@ -94,26 +94,44 @@
                     <!-- Advanced Tables -->
                     <div class="card">
                         <div class="card-action">
-                             Dashboard
+                             Detail Barang Setengah Jadi
                         </div>
                         <div class="card-content">
-                            <div class="table-responsive">
+                            <div class="wow fadeIn" id="wrapper-d">
 
-
-                                
-                                
-
-                                    
-
-                                   
-                            </div>
-                            
-                        </div>
-                    </div>
-                  
-                </div>
+        @if(Session::has('message'))
+        <div class="col s12">
+            <div class="alert">
+                {{ Session::get('message') }}
             </div>
+        </div>
+        @endif
+
+
+    <form class="col s12" action="{{ url('ubahsetengahjadi') }}&{{ $setengahjadi->id_setengahjadi }}">
+     {{ csrf_field() }}   
+     
+      <div class="row">
+        <div class="input-field col s8"><br>
+          <input id="namabarang" type="text" name="namabarang" value="{{ $setengahjadi->namabarang }}" required="">
+          <label for="first_name">Nama Barang </label>
+        </div>
+        <div class="input-field col s8"><br>
+          <input id="jumlahbarang" type="number" name="jumlah" value="{{ $setengahjadi->jumlah }}" required="">
+          <label for="last_name">Jumlah</label>
+        </div>
+      </div>
+       
       
+      <button class="waves-effect waves-light btn" style="width: 100px;">Simpan</button>
+      
+       </form>
+
+       
+    <div class="clearBoth"></div>
+  </div>
+    </div>
+ </div> 
     </div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->

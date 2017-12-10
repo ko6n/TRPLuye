@@ -59,7 +59,7 @@
                     <a href="formkatalogharga" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Katalog Harga</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
+                    <a href="viewbahanbakuAdmin" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Bahan Baku</a>
                 </li>
 
 
@@ -89,7 +89,7 @@
              <div class="col-lg-12">
              <div class="card">
                         <div class="card-action">
-                            Tambah Pemesanan
+                            Detail Pemesanan
                         </div>
                         <div class="card-content">
 
@@ -98,7 +98,7 @@
 
         @if(Session::has('message'))
         <div class="col s12">
-            <div class="alert">
+            <div class="alert1">
                 {{ Session::get('message') }}
             </div>
         </div>
@@ -119,7 +119,13 @@
           <label for="last_name">Tanggal Pemesanan</label><br>
         </div>
           <div class="input-field col s8">
-            <input id="tanggal" type="text" class="datepicker" name="tanggalpesan" value="{{ $pemesanan->tanggalpesan }}" required="">
+            <input id="tanggal" type="date" class="datepicker" name="tanggalpesan" value="{{ $pemesanan->tanggalpesan }}" required="">
+          </div>
+          <div class="input-field col s8">
+          <label for="last_name">Tanggal Jadi</label><br>
+        </div>
+          <div class="input-field col s8">
+            <input id="estimasi" type="date" class="datepicker" name="estimasi" value="{{ $pemesanan->estimasi }}" required="">
           </div>
       </div>
       <div class="row">
@@ -127,10 +133,14 @@
           <input id="alamat" type="text" name="alamat" value="{{ $pemesanan->alamat }}" required="">
           <label for="first_name">Alamat Pemesan</label>
         </div>
-        <div class="input-field col s6"><br>
-          <input id="jenis_barang" type="text" name="jenis_barang" value="{{ $pemesanan->jenis_barang }}" required="">
-          <label for="last_name">Jenis Mesin</label>
-        </div>
+         <div class="input-field col s6" style="margin-top: 39px;">
+            <select id="jenis_barang" name="jenis_barang" class="required" required="">
+              <option value="{{ $pemesanan->jenis_barang }}">- Pilih jenis Mesin -</option>
+              <option value="Vertikal">Vertikal</option>
+              <option value="Horizontal">Horizontal</option>
+              
+            </select>
+          </div>
       </div>
        <div class="row">
         <div class="input-field col s6"><br>
@@ -149,10 +159,16 @@
           <label for="first_name">Kegunaan Mesin</label>
         </div>
         <div class="input-field col s6"><br>
-          <input id="harga" type="text" name="harga" value="{{ $pemesanan->harga }}" required="">
+          <input id="harga" type="number" name="harga" value="{{ $pemesanan->harga }}" required="">
           <label for="last_name">Harga Total</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s8"><br>
+          <input id="keterangan" type="text" name="keterangan" value="{{ $pemesanan->keterangan }}" required="">
+          <label for="first_name">Keterangan Mesin</label>
+        </div>
+        </div>
       <div class="row">
         <div class="input-field col s6"><br>
           <input  id="status" type="text" name="status_jadi" value="{{ $pemesanan->status_jadi }}" readonly="">
@@ -164,7 +180,7 @@
         </div>
       </div>
       
-      <button class="waves-effect waves-light btn" style="width: 100px;">Ubah</button>
+      <button class="waves-effect waves-light btn" style="width: 100px;">Simpan</button>
       <a class="waves-effect waves-light btn" href="{{ url('lihatpemesanan') }}" style="width: 100px;">Kembali</a> 
        </form>
 
@@ -186,7 +202,7 @@
 <!-- Bootstrap Js -->
 <script src="assets/js/bootstrap.min.js"></script>
 
-<script src="assets/materialize/js/materialize.min.js"></script>
+
 
 <!-- Metis Menu Js -->
 <script src="assets/js/jquery.metisMenu.js"></script>
@@ -203,10 +219,12 @@
 
 <script src="assets/js/dataTables/jquery.dataTables.js"></script>
 <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+
+<script src="{{ URL::asset('assets/js/jquery-1.12.4.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/wow.min.js') }}" type="text/javascript"></script> 
+<script src="{{ URL::asset('assets/js/materialize.min.js') }}" type="text/javascript"></script> 
 <script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
+
 
 
 $('.datepicker').pickadate({
@@ -215,6 +233,7 @@ $('.datepicker').pickadate({
     });
 
       new WOW().init();
+         $('.alert1').delay(3000).fadeOut(500)
 
 </script>
 
