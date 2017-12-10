@@ -110,24 +110,170 @@ public function indexbahanbaku(){
        return view('bahanbaku', compact('tingkatans','besis','almuniums','sengs','tembagas','kacamikas','plastiks'));    
    }
 
-public function ubahbahanbaku(Request $request, $id){
+// public function ubahbahanbaku(Request $request, $id){
+//   if ($request->jumlah <= 0) {
+//     return redirect('lihatbahanbaku')->with('message', 'Gagal. Data tidak valid');
+// }else{
+//     $bahanbaku = m_bahanbaku::find($id);
+//     $bahanbaku->namabahan   	= $request->namabahan;  
+//     $bahanbaku->jumlah      	= $request->jumlah;  
+//     $bahanbaku->save();
+//     return redirect('lihatbahanbaku')->with('message', 'Data berhasil diperbarui');
+// }
+// }
+
+// public function editbahanbakuGudang(Request $request, $id){
+//   if ($request->jumlah <= 0) {
+//     return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+// }else{
+//     $besi = m_besi::find($id);
+//     $almunium = m_almunium::find($id);
+//     $tembaga = m_tembaga::find($id);
+//     $kacamika = m_kacamika::find($id);
+//     $plastik = m_plastik::find($id);
+//     $seng = m_seng::find($id);
+//     $besi->jumlah        = $request->jumlah; 
+//     $almunium->jumlah        = $request->jumlah; 
+//     $tembaga->jumlah        = $request->jumlah; 
+//     $kacamika->jumlah        = $request->jumlah; 
+//     $plastik->jumlah        = $request->jumlah;
+//     $seng->jumlah        = $request->jumlah; 
+//     $besi->save();
+//     $almunium->save();
+//     $tembaga->save();
+//     $kacamika->save();
+//     $plastik->save();
+//     $seng->save();
+//     return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+// }
+// }
+
+// public function detailbahanbaku($id){
+
+//     $besi = m_besi::findOrFail($id);
+//     $almunium = m_almunium::findOrFail($id);
+//     $tembaga = m_tembaga::findOrFail($id);
+//     $kacamika = m_kacamika::findOrFail($id);
+//     $plastik = m_plastik::findOrFail($id);
+//     $seng = m_seng::findOrFail($id);
+//     return view('editbahanbakuGudang', compact('besi','almunium','tembaga','kacamika','plastik','seng'));
+
+// }
+
+
+public function editbesi(Request $request, $id){
   if ($request->jumlah <= 0) {
-    return redirect('lihatbahanbaku')->with('message', 'Gagal. Data tidak valid');
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
 }else{
-    $bahanbaku = m_bahanbaku::find($id);
-    $bahanbaku->namabahan   	= $request->namabahan;  
-    $bahanbaku->jumlah      	= $request->jumlah;  
-    $bahanbaku->save();
-    return redirect('lihatbahanbaku')->with('message', 'Data berhasil diperbarui');
+    $besi = m_besi::find($id);
+    $besi->jumlah        = $request->jumlah; 
+    $besi->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
 }
 }
 
-public function detailbahanbaku($id){
+public function editalmunium(Request $request, $id){
+  if ($request->jumlah <= 0) {
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+}else{
+    $almunium = m_almunium::find($id);
+    $almunium->jumlah        = $request->jumlah; 
+    $almunium->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+}
+}
 
-    $bahanbaku = m_bahanbaku::findOrFail($id);
-    return view('editbahanbaku', compact('bahanbaku'));
+public function edittembaga(Request $request, $id){
+  if ($request->jumlah <= 0) {
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+}else{
+    $tembaga = m_tembaga::find($id);
+    $tembaga->jumlah        = $request->jumlah; 
+    $tembaga->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+}
+}
+
+public function editkacamika(Request $request, $id){
+  if ($request->jumlah <= 0) {
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+}else{
+    $kacamika = m_kacamika::find($id);
+    $kacamika->jumlah        = $request->jumlah; 
+    $kacamika->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+}
+}
+
+public function editplastik(Request $request, $id){
+  if ($request->jumlah <= 0) {
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+}else{
+    $plastik = m_plastik::find($id);
+    $plastik->jumlah        = $request->jumlah; 
+    $plastik->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+}
+}
+
+public function editseng(Request $request, $id){
+  if ($request->jumlah <= 0) {
+    return redirect('viewbahanbakuGudang')->with('message', 'Gagal. Data tidak valid');
+}else{
+    $seng = m_seng::find($id);
+    $seng->jumlah        = $request->jumlah; 
+    $seng->save();
+    return redirect('viewbahanbakuGudang')->with('message', 'Data berhasil diperbarui');
+}
+}
+
+
+public function detailbesi($id){
+
+    $besi = m_besi::findOrFail($id);
+    return view('editbahanbesi', compact('besi'));
 
 }
+
+public function detailalmunium($id){
+
+    $almunium = m_almunium::findOrFail($id);
+    return view('editbahanalmunium', compact('almunium'));
+
+}
+
+public function detailtembaga($id){
+
+    $tembaga = m_tembaga::findOrFail($id);
+    return view('editbahantembaga', compact('tembaga'));
+
+}
+
+public function detailkacamika($id){
+
+    $kacamika = m_kacamika::findOrFail($id);
+    return view('editbahankacamika', compact('kacamika'));
+
+}
+
+public function detailplastik($id){
+
+    $plastik = m_plastik::findOrFail($id);
+    return view('editbahanplastik', compact('plastik'));
+
+}
+
+public function detailseng($id){
+
+    $seng = m_seng::findOrFail($id);
+    return view('editbahanseng', compact('seng'));
+
+}
+
+
+
+
+
 
 public function hapusbesi($id_besi)
 {
@@ -190,5 +336,19 @@ public function detailsetengahjadiGudang($id){
     return view('editsetengahjadiGudang', compact('setengahjadi'));
 
 }
+
+public function viewbahanbakuGudang(){
+       $tingkatans = m_tingkatan::all();
+       
+       $ramalbesi = m_besi::latest()->first();
+       $ramalalumunium = m_almunium::latest()->first();
+       $ramalseng = m_seng::latest()->first();
+       $ramalplastik = m_plastik::latest()->first();
+       $ramalkacamika = m_kacamika::latest()->first();
+       $ramaltembaga = m_tembaga::latest()->first();
+       return view('viewbahanbakuGudang', compact('tingkatans','ramalbesi','ramalalumunium','ramalseng','ramalplastik','ramaltembaga','ramalkacamika'));
+
+   }
+
 
 }

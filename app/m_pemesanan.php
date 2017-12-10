@@ -9,7 +9,7 @@ class m_pemesanan extends Model{
     protected $primaryKey = 'id_pemesanan';
 
     protected $fillable = [
-		'nama_pemesan', 'alamat', 'no_telepon', 'jenis_barang' , 'kegunaanmesin', 'jumlah', 'harga' , 'status_jadi', 'desain' ,'tanggalpesan'
+		'nama_pemesan', 'alamat', 'no_telepon', 'jenis_barang' , 'kegunaanmesin', 'jumlah', 'harga' , 'status_jadi', 'desain' ,'tanggalpesan','estimasi','keterangan'
 	];
 
 	protected $hidden = [

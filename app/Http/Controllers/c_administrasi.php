@@ -61,7 +61,8 @@ public function ubahpemesanan(Request $request, $id){
     $pemesanan->keterangan          = $request->keterangan;  
     $pemesanan->status_jadi         = $request->status_jadi;  
     $pemesanan->desain              = $request->desain;  
-    $pemesanan->tanggalpesan        = $request->tanggalpesan;  
+    $pemesanan->tanggalpesan        = $request->tanggalpesan; 
+    $pemesanan->estimasi            = $request->estimasi; 
     $pemesanan->save();
     return redirect('lihatpemesanan')->with('message', 'Data berhasil diperbarui');
 }
